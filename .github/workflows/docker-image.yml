@@ -40,7 +40,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{secrets.DOCKER_USER}}/3uwus-jupyter:${{ steps.get_release.outputs.tag }}
+        tags: ${{secrets.DOCKER_USER}}/3uwus-jupyter:${{ steps.get_release.outputs.tag_name }}
 
   push_prerelease:
     if: "github.event.release.prerelease"
@@ -73,4 +73,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{secrets.DOCKER_USER}}/3uwus-jupyter:pre-${{ steps.get_release.outputs.tag }}
+        tags: ${{secrets.DOCKER_USER}}/3uwus-jupyter:pre-${{ steps.get_release.outputs.tag_name }}
